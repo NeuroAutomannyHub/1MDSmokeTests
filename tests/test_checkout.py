@@ -23,3 +23,7 @@ class TestCheckoutPage(BaseCase):
         self.click_xpath("//button[normalize-space()='Confirm Delivery Option']")
 
         time.sleep(3)
+
+    def test_my_computer(self):
+        self.open("djwiadjwa")
+        self.click("sjdawd")
