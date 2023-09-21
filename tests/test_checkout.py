@@ -1,5 +1,3 @@
-import time
-
 from page_objects.checkout_page import *
 
 
