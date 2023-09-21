@@ -31,7 +31,7 @@ class CheckoutPage:
     def click_on_product(self):
         self._base.click_xpath(self.PRODUCT_PAGE)
 
-    def ss_selector(self):
+    def click_ss_selector(self):
         self._base.click(self.SS_SELECTOR)
 
     def add_to_cart_button(self):

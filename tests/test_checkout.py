@@ -10,7 +10,7 @@ class TestCheckoutPage(BaseCase):
         checkout.navigate_to_url()
         checkout.click_shop()
         checkout.click_on_product()
-        checkout.ss_selector()
+        checkout.click_ss_selector()
         checkout.add_to_cart_button()
         checkout.input_name()
         checkout.input_email()
