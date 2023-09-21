@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from seleniumbase import BaseCase
 from tests.user_data import *
 
