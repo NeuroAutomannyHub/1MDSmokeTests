@@ -1,26 +1,23 @@
-from selenium.webdriver.common.by import By
-from seleniumbase import BaseCase
-from user_data import *
+from page_objects.login_page import *
 
 
 class TestLoginPage(BaseCase):
     def test_login_page_positive(self):
-        self.open("https://staging.1md.org")
-        self.click_link_text('Login')
-        self.assert_text_visible("Login")
-        self.send_keys("name=email", email)
-        self.send_keys("name=password", password)
-        self.click(".cta")
-        self.assert_text("Your Subscription Box")
-        self.click_link_text("log-out")
-        self.assert_element_visible(By.XPATH, "//img[@alt='1MD Nutrition™']")
-        self.tearDown()
+        login = LoginPage(self)
+
+        login.navigate_to()
+        login.enter_email()
+        login.enter_password()
+        login.click_login_button()
+        login.text_visible()
+        login.logo_visible()
+        login.logout()
 
     def test_login_page_negative(self):
-        self.open("https://staging.1md.org")
-        self.click_link_text('Login')
-        self.assert_text_visible("Login")
-        self.send_keys("name=email", "wrongemail@gmail.com")
-        self.send_keys("name=password", "wrontpassword")
-        self.click(".cta")
-        self.assert_text_visible("Log-in incorrect, please try again")
+        login = LoginPage(self)
+
+        login.navigate_to()
+        login.input_negative_email()
+        login.input_negative_password()
+        login.click_login_button()
+        login.incorrect_login_text_visible()
